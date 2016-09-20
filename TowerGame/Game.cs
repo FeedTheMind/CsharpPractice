@@ -4,7 +4,7 @@ namespace TowerDefense
 {
   class Game
   {
-    public static void Main()
+    public static void Main() // Main() is entry point of program.
     {
       Map map = new Map(8, 5); // This is an object. Also, an object is an instance of a class (or type).
       try
@@ -23,12 +23,13 @@ namespace TowerDefense
             }
         );
 
-        Invader[] invaders = 
+        IInvader[] invaders = 
         {
-          new Invader(path),
-          new Invader(path),
-          new Invader(path),
-          new Invader(path)
+          new ShieldedInvader(path),
+          new FastInvader(path),
+          new StrongInvader(path),
+          new BasicInvader(path),
+          new ResurrectingInvader(path)
         };
 
         Tower[] towers = 
